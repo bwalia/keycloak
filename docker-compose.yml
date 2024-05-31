@@ -4,9 +4,15 @@ version: "3"
 services:  
   kc_server:    
     # image: quay.io/keycloak/keycloak:24.0
-    build: .
+    image: keycloak/keycloak:24.0.4-0
+    # build: .
     container_name: kc_server
-    # command: start-dev
+    command: start-dev
+    volumes:
+      # Providers
+      # - './providers:/opt/keycloak/providers'
+      # Development theme folder
+      - './themes/demo/theme:/opt/keycloak/themes'
     environment:      
       KC_DB: postgres
       KC_DB_URL_HOST: kc_postgres_svr
@@ -36,7 +42,7 @@ services:
     healthcheck:
       test: "exit 0"
     ports:
-      - "5432:5432"
+      - "5431:5432"
     networks:
       network_sso:
         ipv4_address: "10.0.0.3"

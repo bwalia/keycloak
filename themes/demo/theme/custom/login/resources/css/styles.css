@@ -17,7 +17,7 @@
 }
 
 div.kc-logo-text {
-    background-image: url(../img/keycloak-logo-text.png);
+    background-image: none;
     background-repeat: no-repeat;
     height: 63px;
     width: 300px;
@@ -27,3 +27,17 @@ div.kc-logo-text {
 div.kc-logo-text span {
     display: none;
 }
+
+#kc-login {
+    background-color: black;
+}
+
+.kc-logo-text span {
+    display: none;
+  }
+  .kc-logo-text:after {
+    content: 'Webimpetus';
+    font-size: 52px;
+    font-weight: 900;
+    color: #cecdcd;
+  }
